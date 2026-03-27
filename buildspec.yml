@@ -1,27 +1,27 @@
 version: 0.2
 
 phases:
- install:
-  runtime-versions:
-   python: 3.10
-  commands:
-   - echo "Installing dependencies..."
-   - pip install -r requirements.txt
- build:
-  commands:
-   - echo "Running tests..."
-   - pytest --junitxml=reports/test-results.xml --tb=short
- post_build:
-  commands:
-   - echo "Build completed successfully"
+  install:
+    runtime-versions:
+      python: 3.10
+    commands:
+      - echo "Installing dependencies..."
+      - pip install -r requirements.txt
+  build:
+    commands:
+      - echo "Running tests..."
+      - pytest --junitxml=reports/test-results.xml --tb=short
+  post_build:
+    commands:
+      - echo "Build completed successfully"
 
 artifacts:
- files:
-  - "**/*"
- base-directory: .
+  files:
+    - "**/*"
+  base-directory: .
 
 reports:
- pytest_reports:
- files:
-  - "reports/test-results.xml"
- discard-paths: yes  
+  pytest_reports:
+    files:
+      - "reports/test-results.xml"
+    discard-paths: yes
