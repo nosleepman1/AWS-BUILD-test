@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+ install:
+  runtime-versions:
+   python: 3.10
+ build:
+  commands:
+   - echo "Running tests..."
+   - python -m unittest test.py
+ post_build:
+  commands:
+   - echo "Build completed successfully"
+
+artifacts:
+ files:
+  - myApp.py
+  - test.py
+  - buildspec.yml
+  - README.md
+  - .gitignore  
