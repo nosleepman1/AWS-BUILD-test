@@ -1,5 +1,5 @@
 import unittest
-from myApp import sayGoodbye, sayGoodbye
+from myApp import sayGoodbye, sayHello
 
 
 

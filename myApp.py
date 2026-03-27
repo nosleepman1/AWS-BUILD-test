@@ -1,6 +1,7 @@
 def sayHello(name):
     return "Hello " + name
 
+
 def sayGoodbye(name):
     return "Goodbye " + name
 
