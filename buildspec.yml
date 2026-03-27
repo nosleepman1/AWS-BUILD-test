@@ -4,18 +4,24 @@ phases:
  install:
   runtime-versions:
    python: 3.10
+  commands:
+   - echo "Installing dependencies..."
+   - pip install -r requirements.txt
  build:
   commands:
    - echo "Running tests..."
-   - python -m unittest test.py
+   - pytest --junitxml=reports/test-results.xml --tb=short
  post_build:
   commands:
    - echo "Build completed successfully"
 
 artifacts:
  files:
-  - myApp.py
-  - test.py
-  - buildspec.yml
-  - README.md
-  - .gitignore  
+  - "**/*"
+ base-directory: .
+
+reports:
+ pytest_reports:
+ files:
+  - "reports/test-results.xml"
+ discard-paths: yes  
